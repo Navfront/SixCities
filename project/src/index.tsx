@@ -16,7 +16,7 @@ type Place = {
 
 const PLACES: Place[] = [
   {
-    name: `Beautiful & luxurious apartment at great location`,
+    name: 'Beautiful & luxurious apartment at great location',
     type: 'Apartment',
     priceValue: 120,
     priceText: 'night',
@@ -25,7 +25,51 @@ const PLACES: Place[] = [
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
     link: '#'
-  }
+  },
+  {
+    name: 'Wood and stone place',
+    type: 'Private room',
+    priceValue: 80,
+    priceText: 'night',
+    mark: '',
+    imageURL: 'img/room.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#'
+  },
+  {
+    name: 'Canal View Prinsengracht',
+    type: 'Apartment',
+    priceValue: 132,
+    priceText: 'night',
+    mark: '',
+    imageURL: 'img/apartment-02.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#'
+  },
+  {
+    name: 'Nice, cozy, warm big bed apartment',
+    type: 'Apartment',
+    priceValue: 80,
+    priceText: 'night',
+    mark: 'Premium',
+    imageURL: 'img/apartment-03.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#'
+  },
+  {
+    name: 'Wood and stone place',
+    type: 'Private room',
+    priceValue: 80,
+    priceText: 'night',
+    mark: '',
+    imageURL: 'img/room.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#'
+  },
 
 ]
 
