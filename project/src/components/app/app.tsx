@@ -1,8 +1,8 @@
-import LoginPage from '../pages/login-page';
+import PropertyPage from '../pages/property-page';
 
 
 function App(): JSX.Element {
-  return <LoginPage/>;
+  return <PropertyPage />;
 }
 
 export default App;
