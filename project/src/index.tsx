@@ -24,7 +24,7 @@ const PLACES: Place[] = [
     imageURL: 'img/apartment-01.jpg',
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
-    link: '#'
+    link: '#',
   },
   {
     name: 'Wood and stone place',
@@ -35,7 +35,7 @@ const PLACES: Place[] = [
     imageURL: 'img/room.jpg',
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
-    link: '#'
+    link: '#',
   },
   {
     name: 'Canal View Prinsengracht',
@@ -46,7 +46,7 @@ const PLACES: Place[] = [
     imageURL: 'img/apartment-02.jpg',
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
-    link: '#'
+    link: '#',
   },
   {
     name: 'Nice, cozy, warm big bed apartment',
@@ -57,7 +57,7 @@ const PLACES: Place[] = [
     imageURL: 'img/apartment-03.jpg',
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
-    link: '#'
+    link: '#',
   },
   {
     name: 'Wood and stone place',
@@ -68,10 +68,9 @@ const PLACES: Place[] = [
     imageURL: 'img/room.jpg',
     isBookmarked: Boolean(Math.round(Math.random())),
     rating: Math.round(Math.random() * 100),
-    link: '#'
+    link: '#',
   },
-
-]
+];
 
 
 ReactDOM.render(
