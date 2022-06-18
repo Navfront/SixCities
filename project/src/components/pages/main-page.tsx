@@ -1,6 +1,6 @@
-import uniqid from 'uniqid';
 import PlaceCard from './../place-card/place-card';
 type Place = {
+  id: string,
   name: string,
   type: string,
   priceValue: number,
@@ -106,7 +106,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {places.map((it, index) => <PlaceCard place={it} key={it.name + uniqid()} />)}
+                {places.map((it, index) => <PlaceCard place={it} key={it.id} />)}
               </div>
             </section>
             <div className="cities__right-section">

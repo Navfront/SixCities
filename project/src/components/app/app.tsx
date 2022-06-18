@@ -9,6 +9,7 @@ import PrivateRoute from '../private-route';
 
 
 type Place = {
+  id: string,
   name: string,
   type: string,
   priceValue: number,

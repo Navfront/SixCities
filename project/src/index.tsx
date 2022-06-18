@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import uniqid from 'uniqid';
 import App from './components/app/app';
 
 type Place = {
+  id: string,
   name: string,
   type: string,
   priceValue: number,
@@ -16,6 +18,7 @@ type Place = {
 
 const PLACES: Place[] = [
   {
+    id: uniqid(),
     name: 'Beautiful & luxurious apartment at great location',
     type: 'Apartment',
     priceValue: 120,
@@ -27,6 +30,7 @@ const PLACES: Place[] = [
     link: '#',
   },
   {
+    id: uniqid(),
     name: 'Wood and stone place',
     type: 'Private room',
     priceValue: 80,
@@ -38,6 +42,7 @@ const PLACES: Place[] = [
     link: '#',
   },
   {
+    id: uniqid(),
     name: 'Canal View Prinsengracht',
     type: 'Apartment',
     priceValue: 132,
@@ -49,6 +54,7 @@ const PLACES: Place[] = [
     link: '#',
   },
   {
+    id: uniqid(),
     name: 'Nice, cozy, warm big bed apartment',
     type: 'Apartment',
     priceValue: 80,
@@ -60,6 +66,7 @@ const PLACES: Place[] = [
     link: '#',
   },
   {
+    id: uniqid(),
     name: 'Wood and stone place',
     type: 'Private room',
     priceValue: 80,

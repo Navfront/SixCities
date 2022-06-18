@@ -1,5 +1,6 @@
 type PlaceCardProps = {
   place: {
+    id: string,
     name: string,
     type: string,
     priceValue: number,
