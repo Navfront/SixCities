@@ -1,20 +1,25 @@
 import { Place } from '../../types/types';
+import { useState } from 'react';
 
-type PlaceCardProps = {
-  place: Place
-}
-
+const BOOKMARK_DEFAULT_CLASS = 'place-card__bookmark-button button';
+const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active';
 const BookmarkText = {
   TO_BOOKMARKS: 'To bookmarks',
   IN_BOOKMARKS: 'In bookmarks',
 };
-const BOOKMARK_DEFAULT_CLASS = 'place-card__bookmark-button button';
-const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active';
 
+type PlaceCardProps = {
+  place: Place,
+  onMouseEnterHandler: (placeId:string) => void,
+}
 
-function PlaceCard({ place }: PlaceCardProps): JSX.Element {
+function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element {
+  const [isBookmarked, setIsBookmarked] = useState(place.isBookmarked);
+
   return (
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card"
+      onMouseEnter={onMouseEnterHandler.bind(null, place.id)}
+    >
       {place.mark ?
         (<div className="place-card__mark"><span>{place.mark}</span></div>)
         :
@@ -31,11 +36,11 @@ function PlaceCard({ place }: PlaceCardProps): JSX.Element {
             <b className="place-card__price-value">&euro;{place.priceValue || '0'}</b>
             <span className="place-card__price-text">&#47;&nbsp;{place.priceText || 'night'}</span>
           </div>
-          <button className={place.isBookmarked ? `${BOOKMARK_DEFAULT_CLASS} ${BOOKMARK_CLASS_ACTIVE}` : BOOKMARK_DEFAULT_CLASS} type="button">
+          <button className={isBookmarked ? `${BOOKMARK_DEFAULT_CLASS} ${BOOKMARK_CLASS_ACTIVE}` : BOOKMARK_DEFAULT_CLASS} type="button" onClick={()=>{setIsBookmarked(!isBookmarked);}}>
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>
-            <span className="visually-hidden">{place.isBookmarked ? BookmarkText.IN_BOOKMARKS : BookmarkText.TO_BOOKMARKS}</span>
+            <span className="visually-hidden">{isBookmarked ? BookmarkText.IN_BOOKMARKS : BookmarkText.TO_BOOKMARKS}</span>
           </button>
         </div>
         <div className="place-card__rating rating">
