@@ -4,6 +4,7 @@ import LoginPage from '../pages/login-page';
 import FavoritePage from '../pages/favorites-page';
 import PropertyPage from '../pages/property-page';
 import { Endpoints } from './../../const/consts';
+import Nothing from '../pages/nothing-page';
 
 type Place = {
   name: string,
@@ -26,7 +27,7 @@ function App({ places }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={Endpoints.PropertyPage}>
+        <Route path={Endpoints.PropertyPage} exact>
           <PropertyPage />
         </Route>
         <Route path={Endpoints.FavoritesPage} exact>
@@ -37,6 +38,9 @@ function App({ places }: AppProps): JSX.Element {
         </Route>
         <Route path={Endpoints.MainPage} exact>
           <MainPage places={places} />
+        </Route>
+        <Route path='/'>
+          <Nothing />
         </Route>
       </Switch>
     </BrowserRouter>
