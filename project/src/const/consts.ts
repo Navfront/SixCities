@@ -1,5 +1,5 @@
 export const Endpoints = {
-  PropertyPage: '/property',
+  PropertyPage: '/offer/:id',
   FavoritesPage: '/favorites',
   LoginPage: '/login',
   MainPage: '/',
