@@ -1,16 +1,7 @@
+import { Place } from '../../types/types';
+
 type PlaceCardProps = {
-  place: {
-    id: string,
-    name: string,
-    type: string,
-    priceValue: number,
-    priceText: string,
-    mark: string,
-    imageURL: string,
-    isBookmarked: boolean,
-    rating: number,
-    link: string,
-  }
+  place: Place
 }
 
 const BookmarkText = {
@@ -54,7 +45,7 @@ function PlaceCard({ place }: PlaceCardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">{place.name || 'No description'}</a>
+          <a href="/">{place.placeName || 'No description'}</a>
         </h2>
         <p className="place-card__type">{place.type || 'Unknown'}</p>
       </div>

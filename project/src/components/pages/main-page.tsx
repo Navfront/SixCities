@@ -1,16 +1,6 @@
 import PlaceCard from './../place-card/place-card';
-type Place = {
-  id: string,
-  name: string,
-  type: string,
-  priceValue: number,
-  priceText: string,
-  mark: string,
-  imageURL: string,
-  isBookmarked: boolean,
-  rating: number,
-  link: string,
-}
+import { Place } from '../../types/types';
+
 
 type MainPageProps = {
   places: Place[];

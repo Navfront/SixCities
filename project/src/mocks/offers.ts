@@ -1,0 +1,58 @@
+import uniqid from 'uniqid';
+import { Place } from '../types/types';
+
+
+export const PLACES: Place[] = [
+  {
+    id: uniqid(),
+    placeName: 'Beautiful & luxurious apartment at great location',
+    city: 'Cologne',
+    type: 'Apartment',
+    priceValue: 120,
+    priceText: 'night',
+    mark: 'Premium',
+    imageURL: 'img/apartment-01.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#',
+  },
+  {
+    id: uniqid(),
+    placeName: 'Wood and stone place',
+    city: 'Amsterdam',
+    type: 'Private room',
+    priceValue: 80,
+    priceText: 'night',
+    mark: '',
+    imageURL: 'img/room.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#',
+  },
+  {
+    id: uniqid(),
+    placeName: 'Canal View Prinsengracht',
+    city: 'Cologne',
+    type: 'Apartment',
+    priceValue: 132,
+    priceText: 'night',
+    mark: '',
+    imageURL: 'img/apartment-02.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#',
+  },
+  {
+    id: uniqid(),
+    placeName: 'Nice, cozy, warm big bed apartment',
+    city: 'Amsterdam',
+    type: 'Apartment',
+    priceValue: 80,
+    priceText: 'night',
+    mark: 'Premium',
+    imageURL: 'img/apartment-03.jpg',
+    isBookmarked: Boolean(Math.round(Math.random())),
+    rating: Math.round(Math.random() * 100),
+    link: '#',
+  },
+];
