@@ -1,5 +1,5 @@
 export enum Endpoints {
-  PropertyPage = '/offer/:id',
+  OfferPage = '/offer/',
   FavoritesPage = '/favorites',
   LoginPage = '/login',
   MainPage = '/',

@@ -1,5 +1,7 @@
 import { Place } from '../../types/types';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Endpoints } from '../../const/consts';
 
 const BOOKMARK_DEFAULT_CLASS = 'place-card__bookmark-button button';
 const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active';
@@ -26,9 +28,9 @@ function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element 
         ''}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="/">
+        <Link to={`${Endpoints.OfferPage}?${place.id}`}>
           <img className="place-card__image" src={place.imageURL || ''} width="260" height="200" alt="Place" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">

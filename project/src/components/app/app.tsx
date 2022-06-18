@@ -3,7 +3,7 @@ import LoginPage from '../pages/login-page';
 import MainPage from '../pages/main-page';
 import Nothing from '../pages/nothing-page';
 import PrivateRoute from '../private-route';
-import PropertyPage from '../pages/property-page';
+import OfferPage from '../pages/offer-page';
 import { AUTHORIZE, Endpoints } from './../../const/consts';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Place } from '../../types/types';
@@ -17,8 +17,8 @@ function App({ places }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={Endpoints.PropertyPage} exact>
-          <PropertyPage />
+        <Route path={Endpoints.OfferPage} exact>
+          <OfferPage />
         </Route>
         <PrivateRoute authorizationStatus={AUTHORIZE.AUTH} render={()=><FavoritePage places={places} />} path={Endpoints.FavoritesPage} exact >
         </PrivateRoute>
