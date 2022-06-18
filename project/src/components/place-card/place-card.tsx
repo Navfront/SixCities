@@ -1,5 +1,6 @@
 type PlaceCardProps = {
   place: {
+    id: string,
     name: string,
     type: string,
     priceValue: number,
@@ -14,10 +15,10 @@ type PlaceCardProps = {
 
 const BookmarkText = {
   TO_BOOKMARKS: 'To bookmarks',
-  IN_BOOKMARKS: 'In bookmarks'
-}
+  IN_BOOKMARKS: 'In bookmarks',
+};
 const BOOKMARK_DEFAULT_CLASS = 'place-card__bookmark-button button';
-const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active'
+const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active';
 
 
 function PlaceCard({ place }: PlaceCardProps): JSX.Element {
@@ -29,8 +30,8 @@ function PlaceCard({ place }: PlaceCardProps): JSX.Element {
         ''}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
-          <img className="place-card__image" src={place.imageURL || ''} width="260" height="200" alt="Place image" />
+        <a href="/">
+          <img className="place-card__image" src={place.imageURL || ''} width="260" height="200" alt="Place" />
         </a>
       </div>
       <div className="place-card__info">
@@ -48,14 +49,14 @@ function PlaceCard({ place }: PlaceCardProps): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={place.rating ? { width: place.rating + '%' } : { width: 0 }}></span>
+            <span style={place.rating ? { width: `${place.rating}%` } : { width: 0 }}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{place.name || 'No description'}</a>
+          <a href="/">{place.name || 'No description'}</a>
         </h2>
-        <p className="place-card__type">{place.type || "Don't know"}</p>
+        <p className="place-card__type">{place.type || 'Unknown'}</p>
       </div>
     </article>
   );
