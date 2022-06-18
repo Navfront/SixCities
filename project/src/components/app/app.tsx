@@ -3,8 +3,10 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LoginPage from '../pages/login-page';
 import FavoritePage from '../pages/favorites-page';
 import PropertyPage from '../pages/property-page';
-import { Endpoints } from './../../const/consts';
+import { AUTHORIZE, Endpoints } from './../../const/consts';
 import Nothing from '../pages/nothing-page';
+import PrivateRoute from '../private-route';
+
 
 type Place = {
   name: string,
@@ -30,9 +32,8 @@ function App({ places }: AppProps): JSX.Element {
         <Route path={Endpoints.PropertyPage} exact>
           <PropertyPage />
         </Route>
-        <Route path={Endpoints.FavoritesPage} exact>
-          <FavoritePage />
-        </Route>
+        <PrivateRoute authorizationStatus={AUTHORIZE.NOTAUTH} render={()=><FavoritePage />} path={Endpoints.FavoritesPage} exact >
+        </PrivateRoute>
         <Route path={Endpoints.LoginPage} exact>
           <LoginPage />
         </Route>
