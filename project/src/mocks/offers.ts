@@ -6,7 +6,7 @@ export const PLACES: Place[] = [
   {
     id: uniqid(),
     placeName: 'Beautiful & luxurious apartment at great location',
-    city: 'Cologne',
+    location: 'Cologne',
     type: 'Apartment',
     priceValue: 120,
     priceText: 'night',
@@ -19,7 +19,7 @@ export const PLACES: Place[] = [
   {
     id: uniqid(),
     placeName: 'Wood and stone place',
-    city: 'Amsterdam',
+    location: 'Amsterdam',
     type: 'Private room',
     priceValue: 80,
     priceText: 'night',
@@ -32,7 +32,7 @@ export const PLACES: Place[] = [
   {
     id: uniqid(),
     placeName: 'Canal View Prinsengracht',
-    city: 'Cologne',
+    location: 'Cologne',
     type: 'Apartment',
     priceValue: 132,
     priceText: 'night',
@@ -45,7 +45,7 @@ export const PLACES: Place[] = [
   {
     id: uniqid(),
     placeName: 'Nice, cozy, warm big bed apartment',
-    city: 'Amsterdam',
+    location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 80,
     priceText: 'night',

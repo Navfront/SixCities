@@ -1,7 +1,7 @@
 export type Place = {
   id: string,
   placeName: string,
-  city: string,
+  location: string,
   type: string,
   priceValue: number,
   priceText: string,
@@ -10,4 +10,8 @@ export type Place = {
   isBookmarked: boolean,
   rating: number,
   link: string,
+}
+
+export type PlacesByLocationType = {
+  [propName: string]: Place[]
 }

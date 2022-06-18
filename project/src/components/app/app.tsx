@@ -20,7 +20,7 @@ function App({ places }: AppProps): JSX.Element {
         <Route path={Endpoints.PropertyPage} exact>
           <PropertyPage />
         </Route>
-        <PrivateRoute authorizationStatus={AUTHORIZE.AUTH} render={()=><FavoritePage />} path={Endpoints.FavoritesPage} exact >
+        <PrivateRoute authorizationStatus={AUTHORIZE.AUTH} render={()=><FavoritePage places={places} />} path={Endpoints.FavoritesPage} exact >
         </PrivateRoute>
         <Route path={Endpoints.LoginPage} exact>
           <LoginPage />
