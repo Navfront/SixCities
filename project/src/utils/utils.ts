@@ -8,7 +8,9 @@ export const getPlacesByLocation = (places: Place[]): PlacesByLocationType => {
       if (!placesByLocation[location]) {
         placesByLocation[location] = [];
       }
-      placesByLocation[location].push(place);
+      if (place.isBookmarked) {
+        placesByLocation[location].push(place);
+      }
     }
   }
   return placesByLocation;
