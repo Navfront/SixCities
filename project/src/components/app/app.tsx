@@ -1,25 +1,12 @@
-import MainPage from '../pages/main-page';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import LoginPage from '../pages/login-page';
 import FavoritePage from '../pages/favorites-page';
-import PropertyPage from '../pages/property-page';
-import { AUTHORIZE, Endpoints } from './../../const/consts';
+import LoginPage from '../pages/login-page';
+import MainPage from '../pages/main-page';
 import Nothing from '../pages/nothing-page';
 import PrivateRoute from '../private-route';
-
-
-type Place = {
-  id: string,
-  name: string,
-  type: string,
-  priceValue: number,
-  priceText: string,
-  mark: string,
-  imageURL: string,
-  isBookmarked: boolean,
-  rating: number,
-  link: string,
-}
+import OfferPage from '../pages/offer-page';
+import { AUTHORIZE, Endpoints } from './../../const/consts';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Place } from '../../types/types';
 
 type AppProps = {
   places: Place[];
@@ -30,10 +17,10 @@ function App({ places }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path={Endpoints.PropertyPage} exact>
-          <PropertyPage />
+        <Route path={Endpoints.OfferPage} exact>
+          <OfferPage />
         </Route>
-        <PrivateRoute authorizationStatus={AUTHORIZE.NOTAUTH} render={()=><FavoritePage />} path={Endpoints.FavoritesPage} exact >
+        <PrivateRoute authorizationStatus={AUTHORIZE.AUTH} render={()=><FavoritePage places={places} />} path={Endpoints.FavoritesPage} exact >
         </PrivateRoute>
         <Route path={Endpoints.LoginPage} exact>
           <LoginPage />

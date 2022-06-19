@@ -1,7 +1,6 @@
-import { Place } from '../../types/types';
+import { imageUrlToSmall } from '../../utils/utils';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Endpoints } from '../../const/consts';
+import { Place } from '../../types/types';
 
 const BOOKMARK_DEFAULT_CLASS = 'place-card__bookmark-button button';
 const BOOKMARK_CLASS_ACTIVE = 'place-card__bookmark-button--active';
@@ -10,33 +9,25 @@ const BookmarkText = {
   IN_BOOKMARKS: 'In bookmarks',
 };
 
-type PlaceCardProps = {
-  place: Place,
-  onMouseEnterHandler: (placeId:string) => void,
+type FavoritePageType = {
+  place: Place
 }
 
-function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element {
+function FavoritePlace({ place }: FavoritePageType): JSX.Element {
   const [isBookmarked, setIsBookmarked] = useState(place.isBookmarked);
 
   return (
-    <article className="cities__place-card place-card"
-      onMouseEnter={onMouseEnterHandler.bind(null, place.id)}
-    >
-      {place.mark ?
-        (<div className="place-card__mark"><span>{place.mark}</span></div>)
-        :
-        ''}
-
-      <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`${Endpoints.OfferPage}?${place.id}`}>
-          <img className="place-card__image" src={place.imageURL || ''} width="260" height="200" alt="Place" />
-        </Link>
+    <article className="favorites__card place-card">
+      <div className="favorites__image-wrapper place-card__image-wrapper">
+        <a href="/">
+          <img className="place-card__image" src={imageUrlToSmall(place.imageURL)} width="150" height="110" alt="Place" />
+        </a>
       </div>
-      <div className="place-card__info">
+      <div className="favorites__card-info place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">&euro;{place.priceValue || '0'}</b>
-            <span className="place-card__price-text">&#47;&nbsp;{place.priceText || 'night'}</span>
+            <b className="place-card__price-value">&euro;{place.priceValue}</b>
+            <span className="place-card__price-text">&#47;&nbsp;{place.priceText}</span>
           </div>
           <button className={isBookmarked ? `${BOOKMARK_DEFAULT_CLASS} ${BOOKMARK_CLASS_ACTIVE}` : BOOKMARK_DEFAULT_CLASS} type="button" onClick={()=>{setIsBookmarked(!isBookmarked);}}>
             <svg className="place-card__bookmark-icon" width="18" height="19">
@@ -60,4 +51,4 @@ function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element 
   );
 }
 
-export default PlaceCard;
+export default FavoritePlace;
