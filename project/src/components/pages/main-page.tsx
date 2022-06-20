@@ -1,5 +1,8 @@
-import { Place } from '../../types/types';
+import { Place, Point } from '../../types/types';
 import PlaceList from '../place-list/place-list';
+import { useState } from 'react';
+import Map from '../map/map';
+import { AMSTERDAM, AMSTERDAM_POINTS } from './../../mocks/citys';
 
 
 type MainPageProps = {
@@ -7,6 +10,8 @@ type MainPageProps = {
 };
 
 function MainPage({ places }: MainPageProps): JSX.Element {
+  const [selectedPoint] = useState<Point | undefined>(undefined);
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -98,7 +103,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
               <PlaceList places={places}></PlaceList>
             </section>
             <div className="cities__right-section">
-              <section className="cities__map map"></section>
+              <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} />
             </div>
           </div>
         </div>

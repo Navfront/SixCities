@@ -15,3 +15,16 @@ export type Place = {
 export type PlacesByLocationType = {
   [propName: string]: Place[]
 }
+
+export type City = {
+  title: string;
+  lat: number;
+  lng: number;
+  zoom: number;
+};
+
+export type Point = {
+  title: string;
+  lat: number;
+  lng: number;
+};
