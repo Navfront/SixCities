@@ -2,9 +2,9 @@ import { City, Point } from '../types/types';
 
 export const AMSTERDAM: City = {
   title: 'Амстердам',
-  lat: 52.39095539435081,
-  lng: 4.85309666406198,
-  zoom: 15,
+  lat: 52.373057,
+  lng: 4.892557,
+  zoom: 12,
 };
 
 export const AMSTERDAM_POINTS: Point[] = [
