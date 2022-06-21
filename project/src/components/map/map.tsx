@@ -11,7 +11,7 @@ import { URL_MARKER_DEFAULT, URL_MARKER_CURRENT } from './../../const/consts';
 type MapProps = {
   city: City;
   points: Point[];
-  selectedPoint: Point | undefined;
+  selectedPoint: string | undefined;
 };
 
 const defaultCustomIcon = new Icon({
@@ -42,7 +42,7 @@ function Map(props: MapProps): JSX.Element {
 
         marker
           .setIcon(
-            selectedPoint !== undefined && point.title === selectedPoint.title
+            selectedPoint !== undefined && point.id === selectedPoint
               ? currentCustomIcon
               : defaultCustomIcon,
           )

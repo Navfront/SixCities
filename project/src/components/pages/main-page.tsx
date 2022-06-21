@@ -1,4 +1,4 @@
-import { Place, Point } from '../../types/types';
+import { Place } from '../../types/types';
 import PlaceList from '../place-list/place-list';
 import { useState } from 'react';
 import Map from '../map/map';
@@ -10,7 +10,11 @@ type MainPageProps = {
 };
 
 function MainPage({ places }: MainPageProps): JSX.Element {
-  const [selectedPoint] = useState<Point | undefined>(undefined);
+  const [selectedPoint, setSelectedPoint] = useState<string | undefined>(undefined);
+
+  const selectPoint = (pointId: string)=>{
+    setSelectedPoint(pointId);
+  };
 
   return (
     <div className="page page--gray page--main">
@@ -100,7 +104,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <PlaceList places={places}></PlaceList>
+              <PlaceList places={places} selectPoint={selectPoint}></PlaceList>
             </section>
             <div className="cities__right-section">
               <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} />

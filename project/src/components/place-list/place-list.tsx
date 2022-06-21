@@ -3,16 +3,22 @@ import { Place } from '../../types/types';
 import PlaceCard from './../place-card/place-card';
 
 
-type PlaceListType = {
-  places: Place[]
+type PlaceListProps = {
+  places: Place[],
+  selectPoint: (point: string)=>void
 }
 
-function PlaceList({ places }: PlaceListType): JSX.Element {
+function PlaceList({ places, selectPoint }: PlaceListProps): JSX.Element {
   const [activePlace, setActivePlace] = useState(places[0].id);
 
 
   const onMouseEnterHandler = (placeId:string) => {
     setActivePlace(placeId);
+
+    // eslint-disable-next-line no-console
+    console.log('enter');
+
+    selectPoint(placeId);
 
     // WIP
     // eslint-disable-next-line no-console
