@@ -107,7 +107,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
               <PlaceList places={places} selectPoint={selectPoint}></PlaceList>
             </section>
             <div className="cities__right-section">
-              <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} />
+              <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} sectionClassName='cities__map'/>
             </div>
           </div>
         </div>
