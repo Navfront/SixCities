@@ -1,6 +1,14 @@
 import ReviewsForm from './../reviews-form/rewievs-form';
+import { useState, useMemo } from 'react';
+import { PLACES } from './../../mocks/offers';
+import { Place } from '../../types/types';
 
 function PropertyPage(): JSX.Element {
+  const placeId = window.location.search.slice(1);
+  const findedPlace = useMemo(() => PLACES.find((place) => place.id === placeId), []);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [currentPlace, setCurrentPlace] = useState<undefined|Place>(findedPlace);
+
   return (
     <div className="page">
       <header className="header">
