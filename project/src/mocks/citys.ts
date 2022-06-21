@@ -1,23 +1,24 @@
+import uniqid from 'uniqid';
 import { City, Point } from '../types/types';
 
 export const AMSTERDAM_POINTS: Point[] = [
   {
-    title: 'Саундвью',
+    id: uniqid(),
     lat: 52.39095539435081,
     lng: 4.85309666406198,
   },
   {
-    title: 'Ферри Поинт',
+    id: uniqid(),
     lat: 52.369553943508,
     lng: 4.85309666406198,
   },
   {
-    title: 'Бронкс',
+    id: uniqid(),
     lat: 52.3909553943508,
     lng: 4.929309666406198,
   },
   {
-    title: 'Инвуд-Хилл',
+    id: uniqid(),
     lat: 52.3809553943508,
     lng: 4.939309666406198,
   },

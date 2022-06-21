@@ -1,10 +1,10 @@
-import uniqid from 'uniqid';
 import { Place } from '../types/types';
+import { COLOGNE_POINTS, AMSTERDAM_POINTS } from './citys';
 
 
 export const PLACES: Place[] = [
   {
-    id: uniqid(),
+    id: COLOGNE_POINTS[0].id,
     placeName: 'Beautiful & luxurious apartment at great location',
     location: 'Cologne',
     type: 'Apartment',
@@ -17,7 +17,7 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: uniqid(),
+    id: AMSTERDAM_POINTS[0].id,
     placeName: 'Wood and stone place',
     location: 'Amsterdam',
     type: 'Private room',
@@ -30,7 +30,7 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: uniqid(),
+    id: COLOGNE_POINTS[1].id,
     placeName: 'Canal View Prinsengracht',
     location: 'Cologne',
     type: 'Apartment',
@@ -43,7 +43,7 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: uniqid(),
+    id: AMSTERDAM_POINTS[1].id,
     placeName: 'Nice, cozy, warm big bed apartment',
     location: 'Amsterdam',
     type: 'Apartment',
