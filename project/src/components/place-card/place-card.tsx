@@ -52,7 +52,7 @@ function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element 
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="/">{place.placeName || 'No description'}</a>
+          <a href="/">{place.description || 'No description'}</a>
         </h2>
         <p className="place-card__type">{place.type || 'Unknown'}</p>
       </div>

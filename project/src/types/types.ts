@@ -1,6 +1,7 @@
 export type Place = {
   id: string,
   placeName: string,
+  description: string,
   location: string,
   type: string,
   priceValue: number,

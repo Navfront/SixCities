@@ -1,24 +1,32 @@
 import uniqid from 'uniqid';
 import { City, Point } from '../types/types';
 
+class Id {
+  #id = uniqid();
+
+  get is() {
+    return this.#id;
+  }
+}
+
 export const AMSTERDAM_POINTS: Point[] = [
   {
-    id: uniqid(),
+    id: (new Id()).is,
     lat: 52.39095539435081,
     lng: 4.85309666406198,
   },
   {
-    id: uniqid(),
+    id: (new Id()).is,
     lat: 52.369553943508,
     lng: 4.85309666406198,
   },
   {
-    id: uniqid(),
+    id: (new Id()).is,
     lat: 52.3909553943508,
     lng: 4.929309666406198,
   },
   {
-    id: uniqid(),
+    id: (new Id()).is,
     lat: 52.3809553943508,
     lng: 4.939309666406198,
   },

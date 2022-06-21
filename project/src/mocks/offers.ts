@@ -5,7 +5,8 @@ import { AMSTERDAM_POINTS } from './citys';
 export const PLACES: Place[] = [
   {
     id: AMSTERDAM_POINTS[0].id,
-    placeName: 'Beautiful & luxurious apartment at great location',
+    placeName: 'BestPlace',
+    description: 'Beautiful & luxurious apartment at great location',
     location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 120,
@@ -18,7 +19,8 @@ export const PLACES: Place[] = [
   },
   {
     id: AMSTERDAM_POINTS[1].id,
-    placeName: 'Wood and stone place',
+    placeName: 'Wood&Stone',
+    description:'Wood and stone place',
     location: 'Amsterdam',
     type: 'Private room',
     priceValue: 80,
@@ -31,7 +33,8 @@ export const PLACES: Place[] = [
   },
   {
     id: AMSTERDAM_POINTS[2].id,
-    placeName: 'Canal View Prinsengracht',
+    placeName: 'Canal View',
+    description: 'Canal View Prinsengracht',
     location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 132,
@@ -44,7 +47,8 @@ export const PLACES: Place[] = [
   },
   {
     id: AMSTERDAM_POINTS[3].id,
-    placeName: 'Nice, cozy, warm big bed apartment',
+    placeName: 'Big Bed',
+    description: 'Nice, cozy, warm big bed apartment',
     location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 80,
