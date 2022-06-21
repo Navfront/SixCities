@@ -21,6 +21,7 @@ export type City = {
   lat: number;
   lng: number;
   zoom: number;
+  points: Point[];
 };
 
 export type Point = {
