@@ -4,9 +4,9 @@ import { COLOGNE_POINTS, AMSTERDAM_POINTS } from './citys';
 
 export const PLACES: Place[] = [
   {
-    id: COLOGNE_POINTS[0].id,
+    id: AMSTERDAM_POINTS[0].id,
     placeName: 'Beautiful & luxurious apartment at great location',
-    location: 'Cologne',
+    location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 120,
     priceText: 'night',
@@ -17,7 +17,7 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: AMSTERDAM_POINTS[0].id,
+    id: AMSTERDAM_POINTS[1].id,
     placeName: 'Wood and stone place',
     location: 'Amsterdam',
     type: 'Private room',
@@ -30,9 +30,9 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: COLOGNE_POINTS[1].id,
+    id: AMSTERDAM_POINTS[2].id,
     placeName: 'Canal View Prinsengracht',
-    location: 'Cologne',
+    location: 'Amsterdam',
     type: 'Apartment',
     priceValue: 132,
     priceText: 'night',
@@ -43,7 +43,7 @@ export const PLACES: Place[] = [
     link: '#',
   },
   {
-    id: AMSTERDAM_POINTS[1].id,
+    id: AMSTERDAM_POINTS[3].id,
     placeName: 'Nice, cozy, warm big bed apartment',
     location: 'Amsterdam',
     type: 'Apartment',
