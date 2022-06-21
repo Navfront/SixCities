@@ -12,7 +12,7 @@ type MapProps = {
   city: City;
   points: Point[];
   selectedPoint: string | undefined;
-  sectionClassName: string;
+  sectionClassName: 'cities__map' | 'property__map';
 };
 
 const defaultCustomIcon = new Icon({
