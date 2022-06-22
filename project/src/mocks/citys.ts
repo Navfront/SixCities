@@ -17,7 +17,7 @@ export const AMSTERDAM_POINTS: Point[] = [
     lng: 4.929309666406198,
   },
   {
-    id: 'l4onmyu3',
+    id: 'l4onmyu5',
     lat: 52.3809553943508,
     lng: 4.939309666406198,
   },

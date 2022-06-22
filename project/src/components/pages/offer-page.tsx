@@ -1,13 +1,21 @@
 import ReviewsForm from './../reviews-form/rewievs-form';
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { PLACES } from './../../mocks/offers';
 import { Place } from '../../types/types';
 
+const BOOKMARK_DEFAULT_CLASS = 'property__bookmark-button button';
+const BOOKMARK_CLASS_ACTIVE = 'property__bookmark-button--active';
+const BookmarkText = {
+  TO_BOOKMARKS: 'To bookmarks',
+  IN_BOOKMARKS: 'In bookmarks',
+};
+
 function PropertyPage(): JSX.Element {
   const placeId = window.location.search.slice(1);
-  const findedPlace = useMemo(() => PLACES.find((place) => place.id === placeId), []);
+  const findedPlace = PLACES.find((place) => place.id === placeId);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [currentPlace, setCurrentPlace] = useState<undefined|Place>(findedPlace);
+  const [currentPlace, setCurrentPlace] = useState<Place|undefined>(findedPlace);
+  const [isBookmarked, setIsBookmarked] = useState(currentPlace?.isBookmarked || false);
 
   return (
     <div className="page">
@@ -70,14 +78,17 @@ function PropertyPage(): JSX.Element {
               </div>
               <div className="property__name-wrapper">
                 <h1 className="property__name">
-                  Beautiful &amp; luxurious studio at great location
+                  {currentPlace?.description}
                 </h1>
-                <button className="property__bookmark-button button" type="button">
+
+                <button className={isBookmarked ? `${BOOKMARK_DEFAULT_CLASS} ${BOOKMARK_CLASS_ACTIVE}` : BOOKMARK_DEFAULT_CLASS} type="button" onClick={()=>{setIsBookmarked(!isBookmarked);}}>
                   <svg className="property__bookmark-icon" width="31" height="33">
                     <use xlinkHref="#icon-bookmark"></use>
                   </svg>
-                  <span className="visually-hidden">To bookmarks</span>
+                  <span className="visually-hidden">{isBookmarked ? BookmarkText.IN_BOOKMARKS : BookmarkText.TO_BOOKMARKS}</span>
                 </button>
+
+
               </div>
               <div className="property__rating rating">
                 <div className="property__stars rating__stars">
