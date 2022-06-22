@@ -30,3 +30,12 @@ export type Point = {
   lat: number;
   lng: number;
 };
+
+export type Review = {
+  id: string,
+  reviewerName: string,
+  imageUrl: string,
+  rating: number,
+  message: string,
+  date: Date,
+}

@@ -1,4 +1,5 @@
 import { Place, PlacesByLocationType } from '../types/types';
+const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 export const getPlacesByLocation = (places: Place[]): PlacesByLocationType => {
   const placesByLocation: PlacesByLocationType = {};
@@ -33,3 +34,5 @@ export const imageUrlToSmall = (url: string): string => {
     return result.join('');
   }
 };
+
+export const humanizeDateToYM = (date: Date): string => `${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
