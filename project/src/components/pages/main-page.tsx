@@ -104,7 +104,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <PlaceList places={places} selectPoint={selectPoint}></PlaceList>
+              <PlaceList places={places} selectPoint={selectPoint} isMainPage></PlaceList>
             </section>
             <div className="cities__right-section">
               <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} sectionClassName='cities__map'/>

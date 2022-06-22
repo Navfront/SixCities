@@ -9,17 +9,28 @@ const BookmarkText = {
   TO_BOOKMARKS: 'To bookmarks',
   IN_BOOKMARKS: 'In bookmarks',
 };
+const PlaceCardClasses = {
+  cities: {
+    card: 'cities__place-card',
+    imageWrapper: 'cities__image-wrapper',
+  },
+  nearPlaces: {
+    card: 'near-places__card',
+    imageWrapper: 'near-places__image-wrapper',
+  },
+};
 
 type PlaceCardProps = {
   place: Place,
-  onMouseEnterHandler: (placeId:string) => void,
+  onMouseEnterHandler: (placeId: string) => void,
+  isMainPage: boolean,
 }
 
-function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element {
+function PlaceCard({ place, onMouseEnterHandler, isMainPage }: PlaceCardProps): JSX.Element {
   const [isBookmarked, setIsBookmarked] = useState(place.isBookmarked);
 
   return (
-    <article className="cities__place-card place-card"
+    <article className={`${isMainPage? PlaceCardClasses.cities.card : PlaceCardClasses.nearPlaces.card} place-card`}
       onMouseEnter={onMouseEnterHandler.bind(null, place.id)}
     >
       {place.mark ?
@@ -27,7 +38,7 @@ function PlaceCard({ place, onMouseEnterHandler }: PlaceCardProps): JSX.Element 
         :
         ''}
 
-      <div className="cities__image-wrapper place-card__image-wrapper">
+      <div className={`${isMainPage? PlaceCardClasses.cities.imageWrapper : PlaceCardClasses.nearPlaces.imageWrapper} place-card__image-wrapper`}>
         <Link to={`${Endpoints.OfferPage}?${place.id}`}>
           <img className="place-card__image" src={place.imageURL || ''} width="260" height="200" alt="Place" />
         </Link>

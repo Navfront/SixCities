@@ -11,7 +11,7 @@ import { URL_MARKER_DEFAULT, URL_MARKER_CURRENT } from './../../const/consts';
 type MapProps = {
   city: City;
   points: Point[];
-  selectedPoint: string | undefined;
+  selectedPoint: string | undefined | null;
   sectionClassName: 'cities__map' | 'property__map';
 };
 
