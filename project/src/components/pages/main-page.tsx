@@ -2,7 +2,8 @@ import { Place } from '../../types/types';
 import PlaceList from '../place-list/place-list';
 import { useState } from 'react';
 import Map from '../map/map';
-import { AMSTERDAM, AMSTERDAM_POINTS } from './../../mocks/citys';
+import { AMSTERDAM, AMSTERDAM_POINTS} from './../../mocks/citys';
+import LocationSwitcher from './../locations/location-switcher';
 
 
 type MainPageProps = {
@@ -48,42 +49,8 @@ function MainPage({ places }: MainPageProps): JSX.Element {
 
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
-        <div className="tabs">
-          <section className="locations container">
-            <ul className="locations__list tabs__list">
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="/">
-                  <span>Paris</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="/">
-                  <span>Cologne</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="/">
-                  <span>Brussels</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item tabs__item--active" href="/">
-                  <span>Amsterdam</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="/">
-                  <span>Hamburg</span>
-                </a>
-              </li>
-              <li className="locations__item">
-                <a className="locations__item-link tabs__item" href="/">
-                  <span>Dusseldorf</span>
-                </a>
-              </li>
-            </ul>
-          </section>
-        </div>
+
+        <LocationSwitcher/>
         <div className="cities">
           <div className="cities__places-container container">
             <section className="cities__places places">

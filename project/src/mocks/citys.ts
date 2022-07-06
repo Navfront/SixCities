@@ -1,4 +1,4 @@
-import { City, Point } from '../types/types';
+import { City, Location, Point } from '../types/types';
 
 export const AMSTERDAM_POINTS: Point[] = [
   {
@@ -87,4 +87,35 @@ export const CITIES = {
   'Dusseldorf': DUSSELDORF,
 };
 
-
+export const LOCATIONS: Location[] = [
+  {
+    id: '0',
+    cityName: 'Paris',
+    url: '/',
+  },
+  {
+    id: '1',
+    cityName: 'Cologne',
+    url: '/',
+  },
+  {
+    id: '2',
+    cityName: 'Brussels',
+    url: '/',
+  },
+  {
+    id: '3',
+    cityName: 'Amsterdam',
+    url: '/',
+  },
+  {
+    id: '4',
+    cityName: 'Hamburg',
+    url: '/',
+  },
+  {
+    id: '5',
+    cityName: 'Dusseldorf',
+    url: '/',
+  },
+];
