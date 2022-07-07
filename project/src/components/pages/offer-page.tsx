@@ -3,7 +3,7 @@ import { PLACES } from './../../mocks/offers';
 import { Place } from '../../types/types';
 import ReviewList from '../review-list/review-list';
 import Map from '../map/map';
-import { AMSTERDAM, AMSTERDAM_POINTS } from './../../mocks/citys';
+import { AMSTERDAM, AMSTERDAM_POINTS } from '../../mocks/cities';
 import PlaceList from '../place-list/place-list';
 
 const BOOKMARK_DEFAULT_CLASS = 'property__bookmark-button button';

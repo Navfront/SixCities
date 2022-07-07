@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LOCATIONS } from '../../mocks/citys';
+import { LOCATIONS } from '../../mocks/cities';
 
 type CityClickHandler = (cityId: string) => void;
 

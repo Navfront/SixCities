@@ -2,7 +2,7 @@ import { Place } from '../../types/types';
 import PlaceList from '../place-list/place-list';
 import { useState } from 'react';
 import Map from '../map/map';
-import { AMSTERDAM, AMSTERDAM_POINTS} from './../../mocks/citys';
+import { AMSTERDAM, AMSTERDAM_POINTS} from '../../mocks/cities';
 import LocationSwitcher from './../locations/location-switcher';
 import Locations from './../locations/locations';
 import Sort from './../sort/sort-form';

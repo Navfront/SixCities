@@ -1,5 +1,5 @@
 import { Place } from '../types/types';
-import { AMSTERDAM_POINTS } from './citys';
+import { AMSTERDAM_POINTS } from './cities';
 
 
 export const PLACES: Place[] = [
