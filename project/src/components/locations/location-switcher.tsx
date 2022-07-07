@@ -1,15 +1,27 @@
 import { useState } from 'react';
 import { LOCATIONS } from '../../mocks/citys';
-import Locations from './locations';
 
-function LocationSwitcher():JSX.Element {
+type CityClickHandler = (cityId: string) => void;
+
+type LocationData = {
+  locations: typeof LOCATIONS,
+  currentLocation: string,
+  onCityClickHandler: CityClickHandler
+}
+
+type LocationSwitcherProps = {
+  renderLocation: (locationsData: LocationData) => JSX.Element
+}
+
+function LocationSwitcher({renderLocation}: LocationSwitcherProps):JSX.Element {
   const [currentLocation, setCurrentLocation] = useState('3');
 
-  return (
-    <Locations cities={LOCATIONS} activeId={currentLocation} onCityClickHandler={(cityId)=>{
-      setCurrentLocation(cityId);
-    }}
-    />);
+  const onCityClickHandler : CityClickHandler = (cityId)=>{
+    setCurrentLocation(cityId);
+  };
+
+  return renderLocation({locations: LOCATIONS, currentLocation, onCityClickHandler});
 }
 
 export default LocationSwitcher;
+

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Map from '../map/map';
 import { AMSTERDAM, AMSTERDAM_POINTS} from './../../mocks/citys';
 import LocationSwitcher from './../locations/location-switcher';
+import Locations from './../locations/locations';
 
 
 type MainPageProps = {
@@ -50,7 +51,10 @@ function MainPage({ places }: MainPageProps): JSX.Element {
       <main className="page__main page__main--index">
         <h1 className="visually-hidden">Cities</h1>
 
-        <LocationSwitcher/>
+        <LocationSwitcher renderLocation={
+          (locationsData) => <Locations cities={locationsData.locations} activeId={locationsData.currentLocation} onCityClickHandler={locationsData.onCityClickHandler} />
+        }
+        />
         <div className="cities">
           <div className="cities__places-container container">
             <section className="cities__places places">

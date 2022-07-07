@@ -20,7 +20,7 @@ function Locations({ cities, activeId, onCityClickHandler }: LocationsProps): JS
         <ul className="locations__list tabs__list">
           {cities.map((city) => (
             <li className="locations__item" key={`key-${city.id}`}>
-              <a className={'locations__item-link tabs__item'.concat(` ${city.id === activeId && 'tabs__item--active'}`)} href={city.url} onClick={(evt) => { onClickHandler(evt, city.id); }}>
+              <a className={'locations__item-link tabs__item'.concat(` ${city.id === activeId ? 'tabs__item--active' : ''}`)} href={city.url} onClick={(evt) => { onClickHandler(evt, city.id); }}>
                 <span>{city.cityName}</span>
               </a>
             </li>
