@@ -3,15 +3,15 @@ import { Location } from '../../types/types';
 
 type LocationsProps = {
   cities: Location[],
-  activeId: string,
-  onCityClickHandler: (cityId: string) => void,
+  activeId: number,
+  onCityClickHandler: (cityId: number) => void,
 }
 
 function Locations({ cities, activeId, onCityClickHandler }: LocationsProps): JSX.Element {
 
-  const onClickHandler = (event: MouseEvent, cityid: string) => {
-    event.preventDefault(); // WIP
-    onCityClickHandler(cityid);
+  const onClickHandler = (event: MouseEvent, cityId: number) => {
+    event.preventDefault();
+    onCityClickHandler(cityId);
   };
 
   return (

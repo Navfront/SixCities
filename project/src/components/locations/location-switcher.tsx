@@ -1,27 +1,46 @@
-import { useState } from 'react';
-import { LOCATIONS } from '../../mocks/cities';
 
-type CityClickHandler = (cityId: string) => void;
+import { LOCATIONS } from '../../mocks/cities';
+import { connect } from 'react-redux';
+import { State } from '../..';
+import { ChangeCityAction, changeCurrentCity, CurrentCity } from '../../redux/city-reducer';
+import { Dispatch } from '@reduxjs/toolkit';
+import { getLocationById } from './../../mocks/cities';
+
+type CityClickHandler = (cityId: number) => void;
 
 type LocationData = {
   locations: typeof LOCATIONS,
-  currentLocation: string,
+  currentLocation: CurrentCity,
   onCityClickHandler: CityClickHandler
 }
 
 type LocationSwitcherProps = {
-  renderLocation: (locationsData: LocationData) => JSX.Element
+  renderLocation: (locationsData: LocationData) => JSX.Element,
+  currentCity: CurrentCity
+  setCurrentCity: (payload: CurrentCity) => void
 }
 
-function LocationSwitcher({renderLocation}: LocationSwitcherProps):JSX.Element {
-  const [currentLocation, setCurrentLocation] = useState('3');
+function LocationSwitcher({renderLocation, currentCity, setCurrentCity}: LocationSwitcherProps):JSX.Element {
 
   const onCityClickHandler : CityClickHandler = (cityId)=>{
-    setCurrentLocation(cityId);
+    setCurrentCity({name: getLocationById(cityId), index: cityId});
   };
 
-  return renderLocation({locations: LOCATIONS, currentLocation, onCityClickHandler});
+  return renderLocation({ locations: LOCATIONS, currentLocation: currentCity, onCityClickHandler });
+
+
 }
 
-export default LocationSwitcher;
+const mapStateToProps = (state: State) => ({
+  currentCity: state.currentCity,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<ChangeCityAction>) => ({
+  setCurrentCity: (payload: CurrentCity) => {
+    dispatch(changeCurrentCity(payload));
+  },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(LocationSwitcher);
 

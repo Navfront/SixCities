@@ -53,7 +53,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
         <h1 className="visually-hidden">Cities</h1>
 
         <LocationSwitcher renderLocation={
-          (locationsData) => <Locations cities={locationsData.locations} activeId={locationsData.currentLocation} onCityClickHandler={locationsData.onCityClickHandler} />
+          (locationsData) => <Locations cities={locationsData.locations} activeId={locationsData.currentLocation.index} onCityClickHandler={locationsData.onCityClickHandler} />
         }
         />
         <div className="cities">

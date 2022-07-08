@@ -26,7 +26,7 @@ export type City = {
 };
 
 export type Location = {
-  id: string,
+  id: number,
   cityName: string,
   url: string,
 }

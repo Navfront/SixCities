@@ -89,33 +89,49 @@ export const CITIES = {
 
 export const LOCATIONS: Location[] = [
   {
-    id: '0',
+    id: 0,
     cityName: 'Paris',
     url: '/',
   },
   {
-    id: '1',
+    id: 1,
     cityName: 'Cologne',
     url: '/',
   },
   {
-    id: '2',
+    id: 2,
     cityName: 'Brussels',
     url: '/',
   },
   {
-    id: '3',
+    id: 3,
     cityName: 'Amsterdam',
     url: '/',
   },
   {
-    id: '4',
+    id: 4,
     cityName: 'Hamburg',
     url: '/',
   },
   {
-    id: '5',
+    id: 5,
     cityName: 'Dusseldorf',
     url: '/',
   },
 ];
+
+export const getLocationById = (id?: number): string => {
+  const location = LOCATIONS.find((city) => city.id === id);
+  if (location) {
+    return location.cityName;
+  }
+  return LOCATIONS[0].cityName;
+};
+
+export const getIdByLocation = (cityName: string): number => {
+  const location = LOCATIONS.find(((city) => city.cityName === cityName));
+  if (location) {
+    return location.id;
+  }
+  throw new Error('wrong Location name');
+};
