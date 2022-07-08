@@ -1,11 +1,7 @@
 import { Place } from '../../types/types';
-import PlaceList from '../place-list/place-list';
-import { useState } from 'react';
-import Map from '../map/map';
-import { AMSTERDAM, AMSTERDAM_POINTS} from '../../mocks/cities';
 import LocationSwitcher from './../locations/location-switcher';
 import Locations from './../locations/locations';
-import Sort from './../sort/sort-form';
+import Cities from './../cities/cities';
 
 
 type MainPageProps = {
@@ -13,11 +9,6 @@ type MainPageProps = {
 };
 
 function MainPage({ places }: MainPageProps): JSX.Element {
-  const [selectedPoint, setSelectedPoint] = useState<string | undefined>(undefined);
-
-  const selectPoint = (pointId: string)=>{
-    setSelectedPoint(pointId);
-  };
 
   return (
     <div className="page page--gray page--main">
@@ -56,19 +47,7 @@ function MainPage({ places }: MainPageProps): JSX.Element {
           (locationsData) => <Locations cities={locationsData.locations} activeId={locationsData.currentLocation.index} onCityClickHandler={locationsData.onCityClickHandler} />
         }
         />
-        <div className="cities">
-          <div className="cities__places-container container">
-            <section className="cities__places places">
-              <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">312 places to stay in Amsterdam</b>
-              <Sort />
-              <PlaceList places={places} selectPoint={selectPoint} isMainPage></PlaceList>
-            </section>
-            <div className="cities__right-section">
-              <Map city={AMSTERDAM} points={AMSTERDAM_POINTS} selectedPoint={selectedPoint} sectionClassName='cities__map'/>
-            </div>
-          </div>
-        </div>
+        <Cities places={places}/>
       </main>
     </div>
   );

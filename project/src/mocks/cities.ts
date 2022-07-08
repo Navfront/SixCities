@@ -78,7 +78,7 @@ export const PARIS: City = {
   points: PARIS_POINTS,
 };
 
-export const CITIES = {
+export const CITIES: { [key: string]: City}  = {
   'Paris': PARIS,
   'Cologne': COLOGNE,
   'Brussels': BRUSSELS,
