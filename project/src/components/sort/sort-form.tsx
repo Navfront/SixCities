@@ -2,10 +2,20 @@ import SortList from './sorl-list';
 import SotrButton from './sort-button';
 import { useState } from 'react';
 import { SORTS } from './../../mocks/sorts';
+import { State } from '../..';
+import { connect } from 'react-redux';
+import { Dispatch } from '@reduxjs/toolkit';
+import { ChangeSortAction } from '../../redux/city-reducer';
+import { changeCurrentSort } from './../../redux/city-reducer';
 
-function Sort(): JSX.Element {
+type SortProps = {
+  currentSortIndex: number;
+  setCurrentSort: (payload: number)=>void
+}
+
+function Sort({currentSortIndex, setCurrentSort} : SortProps): JSX.Element {
   const [isOpened, setIsOpened] = useState(false);
-  const [currentSortIndex, setCurrentSortIndex] = useState(0);
+  // const [currentSortIndex, setCurrentSortIndex] = useState(0);
 
   const onOpenClickHandler = () => {
     setIsOpened(!isOpened);
@@ -13,7 +23,7 @@ function Sort(): JSX.Element {
 
   const onSortClickHandler = (index: number) => {
     if (index >= 0 && index < SORTS.length) {
-      setCurrentSortIndex(index);
+      setCurrentSort(index);
       setIsOpened(false);
     }
   };
@@ -27,4 +37,14 @@ function Sort(): JSX.Element {
   );
 }
 
-export default Sort;
+const mapStateToProps = (state: State) => ({
+  currentSortIndex: state.currentSort,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch<ChangeSortAction>) => ({
+  setCurrentSort: (payload: number) => {
+    dispatch(changeCurrentSort(payload));
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Sort);

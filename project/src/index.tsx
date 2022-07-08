@@ -10,12 +10,14 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from './redux/logger';
 
 const INIT_CITY_INDEX = 3;
+const INIT_SORT_INDEX = 0;
 
 export const initialState = {
   currentCity: {
     name: LOCATIONS[INIT_CITY_INDEX].cityName,
     index: LOCATIONS[INIT_CITY_INDEX].id,
   },
+  currentSort: INIT_SORT_INDEX,
 };
 
 export type State = typeof initialState
