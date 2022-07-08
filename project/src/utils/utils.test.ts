@@ -1,4 +1,5 @@
-import { getPlacesByLocation, imageUrlToSmall, humanizeDateToYM } from './utils';
+import { getPlacesByLocation, imageUrlToSmall, humanizeDateToYM, sortPlaces } from './utils';
+import { PLACES } from './../mocks/offers';
 
 
 test('PlacesByLocation works', () => {
@@ -12,4 +13,8 @@ test('ImageUrlToSmall works', () => {
 
 test('Humanize review date works', () => {
   expect(humanizeDateToYM(new Date('2023-04-15'))).toBe('April 2023');
+});
+
+test('SortPlaces Works', () => {
+  expect(sortPlaces(1, PLACES)).toStrictEqual(PLACES);
 });

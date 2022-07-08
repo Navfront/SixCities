@@ -1,4 +1,5 @@
 import { Place, PlacesByLocationType } from '../types/types';
+
 const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
 export const getPlacesByLocation = (places: Place[]): PlacesByLocationType => {
@@ -36,3 +37,17 @@ export const imageUrlToSmall = (url: string): string => {
 };
 
 export const humanizeDateToYM = (date: Date): string => `${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+
+
+export const sortPlaces = (sortIndex: number, places: Place[]): Place[] => {
+  switch (sortIndex) {
+    case 1:
+      return places.sort((a, b) => a.priceValue - b.priceValue);
+    case 2:
+      return places.sort((a, b) => b.priceValue - a.priceValue);
+    case 3:
+      return places.sort((a, b) => b.rating - a.rating);
+    default:
+      return places.sort((a, b) => Number(b.isBookmarked) - Number(a.isBookmarked));
+  }
+};
