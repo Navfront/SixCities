@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import App from './components/app/app';
 import { LOCATIONS } from './mocks/cities';
 import { PLACES } from './mocks/offers';
-import cityReducer from './redux/city-reducer';
+import mainReducer from './redux/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { logger } from './redux/logger';
 
@@ -22,7 +22,7 @@ export const initialState = {
 
 export type State = typeof initialState
 
-const store = createStore(cityReducer, composeWithDevTools(applyMiddleware(logger))); // need to clear before deploy
+const store = createStore(mainReducer, composeWithDevTools(applyMiddleware(logger))); // need to clear before deploy
 
 ReactDOM.render(
   <React.StrictMode>

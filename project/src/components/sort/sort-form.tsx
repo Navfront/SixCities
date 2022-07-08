@@ -5,8 +5,9 @@ import { SORTS } from './../../mocks/sorts';
 import { State } from '../..';
 import { connect } from 'react-redux';
 import { Dispatch } from '@reduxjs/toolkit';
-import { ChangeSortAction } from '../../redux/city-reducer';
-import { changeCurrentSort } from './../../redux/city-reducer';
+import { ChangeSortAction } from '../../redux/action-types';
+import { changeCurrentSortAction } from '../../redux/action-creators';
+
 
 type SortProps = {
   currentSortIndex: number;
@@ -43,7 +44,7 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<ChangeSortAction>) => ({
   setCurrentSort: (payload: number) => {
-    dispatch(changeCurrentSort(payload));
+    dispatch(changeCurrentSortAction(payload));
   },
 });
 

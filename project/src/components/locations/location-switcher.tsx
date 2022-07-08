@@ -2,9 +2,12 @@
 import { LOCATIONS } from '../../mocks/cities';
 import { connect } from 'react-redux';
 import { State } from '../..';
-import { ChangeCityAction, changeCurrentCity, CurrentCity } from '../../redux/city-reducer';
+
 import { Dispatch } from '@reduxjs/toolkit';
 import { getLocationById } from './../../mocks/cities';
+import { CurrentCity } from '../../types/types';
+import { ChangeCityAction } from '../../redux/action-types';
+import { changeCurrentCityAction } from './../../redux/action-creators';
 
 type CityClickHandler = (cityId: number) => void;
 
@@ -37,7 +40,7 @@ const mapStateToProps = (state: State) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch<ChangeCityAction>) => ({
   setCurrentCity: (payload: CurrentCity) => {
-    dispatch(changeCurrentCity(payload));
+    dispatch(changeCurrentCityAction(payload));
   },
 });
 

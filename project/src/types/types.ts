@@ -45,3 +45,8 @@ export type Review = {
   message: string,
   date: Date,
 }
+
+export type CurrentCity = {
+  name: string,
+  index: number,
+}
